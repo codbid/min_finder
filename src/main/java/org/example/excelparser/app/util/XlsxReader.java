@@ -6,12 +6,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class XlsxReader {
-    public static List<Integer> readFile(String path) {
-        List<Integer> result = new ArrayList<>();
+    public static Set<Integer> readFile(String path) {
+        Set<Integer> result = new HashSet<>();
 
         try (FileInputStream f = new FileInputStream(path);
              Workbook workbook = new XSSFWorkbook(f)) {

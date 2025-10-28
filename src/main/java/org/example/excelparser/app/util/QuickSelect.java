@@ -1,10 +1,10 @@
 package org.example.excelparser.app.util;
 
-import java.util.List;
+import java.util.Set;
 
 public class QuickSelect {
-    public static int select(List<Integer> list, int n) {
-        int[] arr = list.stream().mapToInt(Integer::intValue).toArray();
+    public static int select(Set<Integer> set, int n) {
+        int[] arr = set.stream().mapToInt(Integer::intValue).toArray();
         return quickSelect(arr, 0, arr.length - 1, n);
     }
 

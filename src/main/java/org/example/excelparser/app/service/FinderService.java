@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 public class FinderService {
@@ -16,7 +16,7 @@ public class FinderService {
         long startTotal = System.nanoTime();
 
         long startRead = System.nanoTime();
-        List<Integer> numbers = XlsxReader.readFile(path);
+        Set<Integer> numbers = XlsxReader.readFile(path);
         long endRead = System.nanoTime();
 
         if (numbers.isEmpty()) {
