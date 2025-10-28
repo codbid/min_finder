@@ -32,7 +32,7 @@ http://localhost:8080
 
 Swagger UI:
 
-http://localhost:8080/swagger-ui/index.html?url=/openapi.json#
+http://localhost:8080/swagger-ui/index.html
 
 ---
 
