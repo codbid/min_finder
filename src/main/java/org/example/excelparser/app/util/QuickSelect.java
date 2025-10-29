@@ -14,35 +14,31 @@ public class QuickSelect {
 
             if (n == pivot)
                 return arr[pivot];
-            else if (n < pivot)
-                right = pivot - 1;
+            else if (n <= pivot)
+                right = pivot;
             else
                 left = pivot + 1;
         }
     }
 
     private static int partition(int[] arr, int left, int right) {
-        int pivotVal = arr[(left + right) / 2];
+        int mid = (left + right) / 2;
+        int pivot = arr[mid];
         int i = left;
         int j = right;
 
-        while (i <= j) {
-            while (arr[i] < pivotVal) i++;
-            while (arr[j] > pivotVal) j--;
+        while (true) {
+            while (arr[i] < pivot) i++;
+            while (arr[j] > pivot) j--;
 
-            if (i <= j) {
-                swap(arr, i, j);
-                i++;
-                j--;
-            }
+            if (i >= j)
+                return j;
+
+            int tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+            i++;
+            j--;
         }
-
-        return i - 1;
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 }
