@@ -26,8 +26,13 @@ public class FinderService {
             throw new IllegalArgumentException("N out of bound: 1.." + numbers.size());
         }
 
+        int[] arr = new int[numbers.size()];
+        int i = 0;
+        for (int v : numbers)
+            arr[i++] = v;
+
         long startSelect = System.nanoTime();
-        int result = QuickSelect.select(numbers, n - 1);
+        int result = QuickSelect.select(arr, n - 1);
         long endSelect = System.nanoTime();
 
         long endTotal = System.nanoTime();
