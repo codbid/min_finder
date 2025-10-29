@@ -49,7 +49,7 @@ GET http://localhost:8080/api/v1/finder/min-nth?path=C:\temp\test.xlsx&n=3
 При запуске через Docker, путь к файлу будет `/data/test.xlsx`.
 
 ---
-[java](src/main/java)
+
 ## Summary
 
 Для поиска минимального элемента используется модифицированный алгоритм Quick Select. 
